@@ -1,6 +1,6 @@
 ## Description
 
-**vault-recursive-delete** is a ruby script that will walk all of the subpaths of a given path in vault, and delete them for you.  It's like `rf -rf /path/to/folder`, but for Vault entries.
+**vault-recursive-delete** is a ruby script that will discover all of the subpaths of a given path in vault, then delete them for you.  It's like `rf -rf /path/to/folder`, but for Vault entries.
 
 ## Requirements
 
