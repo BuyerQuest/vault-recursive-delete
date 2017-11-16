@@ -35,7 +35,7 @@ Invoke the script (the trailing slash is important):
 
 ## Example
 
-```shell
+```console
 $ git clone https://github.com/BuyerQuest/vault-recursive-delete.git
 Cloning into 'vault-recursive-delete'...
 remote: Counting objects: 13, done.
@@ -73,7 +73,7 @@ Removing path secret/foo/: succeeded
 
 Use the `--help` switch:
 
-```shell
+```console
 17:09 $ ./vault-recursive-delete.rb --help
 Recursive delete for paths in vault.
 
