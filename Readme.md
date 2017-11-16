@@ -36,7 +36,31 @@ Invoke the script (the trailing slash is important):
 ## Example
 
 ```shell
-17:09 $ ./vault-recursive-delete.rb -p secret/foo/ --force
+$ git clone https://github.com/BuyerQuest/vault-recursive-delete.git
+Cloning into 'vault-recursive-delete'...
+remote: Counting objects: 13, done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 13 (delta 2), reused 10 (delta 2), pack-reused 0
+Unpacking objects: 100% (13/13), done.
+
+$ cd vault-recursive-delete/
+
+$ bundler install
+Fetching gem metadata from https://rubygems.org/................
+Resolving dependencies...
+Using OptionParser 0.5.1
+Using bundler 1.16.0
+Using vault 0.10.1
+Bundle complete! 2 Gemfile dependencies, 3 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+
+$ export VAULT_ADDR=https://redacted.vault.url
+
+$ vault auth -method=ldap username=fake.username
+Successfully authenticated! You are now logged in.
+#<snip>
+
+$ ./vault-recursive-delete.rb -p secret/foo/ --force
 Removing key secret/foo/path/key1: succeeded
 Removing key secret/foo/path/key2: succeeded
 Removing key secret/foo/key1: succeeded
