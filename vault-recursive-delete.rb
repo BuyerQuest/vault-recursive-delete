@@ -1,4 +1,4 @@
-#!/opt/chefdk/embedded/bin/ruby
+#!/usr/bin/env ruby
 # rubocop:disable Metrics/LineLength,Metrics/MethodLength,Metrics/AbcSize
 
 require 'yaml'
