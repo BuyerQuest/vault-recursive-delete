@@ -13,11 +13,11 @@ options = {}
 parser = OptionParser.new do |opts|
   opts.banner = "Recursive delete for paths in vault.\n\nUsage: #{SCRIPT_NAME} [options]"
 
-  opts.on('-a[VAULT_ADDR]', '--vault-address=[VAULT_ADDR]', 'URL used to access the Vault server. Defaults to the VAULT_ADDR environment variable if not set') do |v|
+  opts.on('-a[VAULT_ADDR]', '--vault-address=[VAULT_ADDR]', 'URL used to access the Vault server. Defaults to the VAULT_ADDR environment variable') do |v|
     options[:vault_addr] = v
   end
 
-  opts.on('-t[VAULT_TOKEN]', '--vault-token=[VAULT_TOKEN]', '(Optional) Raw vault token. If not supplied here it will default to VAULT_TOKEN environment variable, or ~/.vault-token') do |v|
+  opts.on('-t[VAULT_TOKEN]', '--vault-token=[VAULT_TOKEN]', 'A vault token. Defaults to VAULT_TOKEN environment variable, or reads ~/.vault-token') do |v|
     options[:vault_token] = v
   end
 
