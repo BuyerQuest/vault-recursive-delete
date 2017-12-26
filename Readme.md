@@ -78,7 +78,8 @@ Use the `--help` switch:
 Recursive delete for paths in vault.
 
 Usage: ./vault-recursive-delete.rb [options]
-    -a, --vault-address=[VAULT_ADDR] URL used to access the Vault server. Defaults to the VAULT_ADDR environment variable if not set
+    -a, --vault-address=[VAULT_ADDR] URL used to access the Vault server. Defaults to the VAULT_ADDR environment variable
+    -t, --vault-token=[VAULT_TOKEN]  A vault token. Defaults to VAULT_TOKEN environment variable, or reads ~/.vault-token
     -p, --path=PATH                  Path in vault to delete from, with a trailing slash. E.g. secret/foo/
         --force                      Suppress confirmation and delete automatically. Use carefully.
 
