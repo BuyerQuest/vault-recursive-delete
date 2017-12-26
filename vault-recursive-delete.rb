@@ -17,6 +17,10 @@ parser = OptionParser.new do |opts|
     options[:vault_addr] = v
   end
 
+  opts.on('-t[VAULT_TOKEN]', '--vault-token=[VAULT_TOKEN]', '(Optional) Raw vault token. If not supplied here it will default to VAULT_TOKEN environment variable, or ~/.vault-token') do |v|
+    options[:vault_token] = v
+  end
+
   opts.on('-pPATH', '--path=PATH', 'Path in vault to delete from, with a trailing slash. E.g. secret/foo/') do |v|
     options[:path] = v
   end
@@ -118,10 +122,15 @@ def vault_recursive_delete(del_path, force_delete = false)
 end
 
 # Check that we have a vault token we can use
-begin
-  token = File.read("#{Dir.home}/.vault-token")
-rescue Errno::ENOENT => e
-  raise Errno::ENOENT, "Missing vault token file: #{e}"
+token = options[:vault_token].nil? ? ENV['VAULT_TOKEN'] : options[:vault_token]
+
+# Pull from the home directory if we don't have it in our environment
+if token.nil?
+  begin
+    token = File.read("#{Dir.home}/.vault-token")
+  rescue Errno::ENOENT => e
+    raise Errno::ENOENT, "Missing vault token file: #{e}"
+  end
 end
 
 # Sanity check the token
