@@ -15,11 +15,11 @@ Clone this repository to your machine:
 git clone https://github.com/BuyerQuest/vault-recursive-delete.git
 ```
 
-Enter the directory and run `bundler install`:
+Enter the directory and run `bundle install`:
 
 ```shell
 cd vault-recursive-delete/
-bundler install
+bundle install
 ```
 
 Authenticate to your vault server (use what's appropriate for your setup):
@@ -45,7 +45,7 @@ Unpacking objects: 100% (13/13), done.
 
 $ cd vault-recursive-delete/
 
-$ bundler install
+$ bundle install
 Fetching gem metadata from https://rubygems.org/................
 Resolving dependencies...
 Using OptionParser 0.5.1
