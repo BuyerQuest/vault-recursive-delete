@@ -86,3 +86,7 @@ Usage: ./vault-recursive-delete.rb [options]
     -h, --help                       Display this help
     -v, --version                    Display the current script version
 ```
+
+## See also
+
+[Vault Recursive Read](https://github.com/BuyerQuest/vault-recursive-read)
